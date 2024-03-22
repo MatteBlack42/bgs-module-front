@@ -1,0 +1,25 @@
+.HeaderContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-basis: 20%;
+    padding: 6rem 3rem;
+    gap: 4rem;
+    filter: drop-shadow(7px 0px 48px #f1f4f3);
+}
+.HeaderButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.HeaderButton {
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    padding: 1rem;
+    border-radius: 15px;
+}
+.HeaderButton:hover {
+    background-color: #f1f4f3;
+}
