@@ -17,7 +17,7 @@ async function getContrato() {
     setRefresh(!refresh);
 }
 
-async function deleteColaborador(id) {
+async function deleteContrato(id) {
     'use server';
     const response = await fetch(
         `https://dazzling-flame-563a188d67.strapiapp.com/api/colaboradors/${id}`,
@@ -29,22 +29,17 @@ async function deleteColaborador(id) {
     console.log(data);
     revalidatePath('/');
 }
-async function cesarColaborador(id, state) {
+async function crearColaborador(opciones) {
     'use server';
-    const cesarColaborador = {
-        data: {
-            Cesado: !state,
-        },
-    };
     const response = await fetch(
         `https://dazzling-flame-563a188d67.strapiapp.com/api/colaboradors/${id}`,
         {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(cesarColaborador),
+            body: JSON.stringify(opciones),
         }
     );
     const data = await response.json();
